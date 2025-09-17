@@ -66,7 +66,35 @@ function handleSearchFormSubmit(event) {
   cityElement.innerHTML = searchInput.value;
   searchCity(searchInput.value);
 }
+
+// weather forecast
+
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = ""; // Clear previous content
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let todayIndex = new Date().getDay(); // Get current day index (0 = Sunday, 6 = Saturday)
+
+  // Loop through the next 5 days, skipping today
+  for (let i = 1; i <= 5; i++) {
+    let forecastDayIndex = (todayIndex + i) % 7;
+    let dayName = days[forecastDayIndex];
+
+    forecast.innerHTML += `
+      <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${dayName}</div>
+        <div class="weather-forecast-icon">☀️</div>
+        <div class="weather-forecast-temperatures">
+          <strong>22°</strong> 12°
+        </div>
+      </div>
+    `;
+  }
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchFormSubmit);
 
-searchCity("Bindura");
+searchCity("Kinshasa");
+displayForecast();
