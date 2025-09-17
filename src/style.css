@@ -102,9 +102,12 @@ header {
   margin: 0 10px;
 }
 
-.weather-forecast-icon {
-  font-size: 22px;
-  margin-bottom: 5px;
+.weather-forecast-icon img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .weather-forecast-temperatures {
