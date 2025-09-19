@@ -1,4 +1,4 @@
-// Format date and time
+// Format date and time using local device time
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
@@ -43,7 +43,7 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 }
 
-// Display 5-day forecast (excluding today)
+// Display 5-day forecast
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = "";
@@ -100,4 +100,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchFormSubmit);
 
 // Default city on load
-searchCity("Brisbane");
+searchCity("Kampala");

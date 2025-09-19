@@ -78,6 +78,12 @@ header {
   position: relative;
   top: 10px;
 }
+.weather-app-note {
+  display: block;
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+}
 
 .weather-app-temperature-wrapper {
   display: flex;
